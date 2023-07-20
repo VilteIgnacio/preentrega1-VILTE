@@ -1,34 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Clicker } from './componentes/Clicker'
+import { Tutores } from './componentes/Tutores'
+import { Header } from './componentes/Header'
+import { ItemListContainer } from './componentes/itemListContainer'
+import  {Contenedor}  from './componentes/contenedor'
+import { MiBoton } from './componentes/MiBoton'
+ /* import bienvenida from './ejemplos/saludos' */ //forma default de IMPORTAR
+/* import { bienvenida , despedida } from './ejemplos/saludos'  */// forma especifica de IMPORTAR
+// Si quiero cambiarle el nombre = import {bienvenida as saludo}// as
+
+const saludar = () => {
+  console.log("hola");
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+/* bienvenida()
+despedida() */
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>{/* {  <Tutores/>} */}
+{/* <Clicker/> */}
+
+<Header/>
+<ItemListContainer/>
+
+<Contenedor>
+  <Tutores/>
+  <MiBoton color="red" click={saludar}>
+click me <img src="./vite.svg" alt="" />
+  </MiBoton>
+</Contenedor>
+
+
+
+
+
+
+
+
+
+
+    </div>
   )
 }
 
